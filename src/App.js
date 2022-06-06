@@ -16,7 +16,9 @@ function App() {
 
   return (
     <div className="App">
- 
+ <div className='App-header '>
+   Text Generator
+ </div>
           <Form textHandler={textHandler}/>
           <Text para={para} text={text} html={html}/>
 
