@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import Form from './components/Form';
+import Text from "./components/Text";
 function App() {
+  const [text , setText] = useState("");
+  const [para, setPara] = useState(1);
+  const [html, setHtml] = useState("no");
+  const textHandler = (data, para, html) => {
+    setPara(para);
+    setText(data)
+    setHtml(html)
+
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ 
+          <Form textHandler={textHandler}/>
+          <Text para={para} text={text} html={html}/>
+
     </div>
   );
 }
